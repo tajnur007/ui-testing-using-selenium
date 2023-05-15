@@ -1,6 +1,11 @@
 const { Builder, By, Key } = require('selenium-webdriver');
 require('chromedriver');
+const assert = require('assert');
 
+
+/**
+ * Function definations
+ */
 async function loginTest() {
   // Open chrome browser
   const driver = new Builder().forBrowser('chrome').build();
@@ -18,4 +23,23 @@ async function loginTest() {
   }, 3000);
 }
 
-loginTest();
+async function assertionTest() {
+  const driver = new Builder().forBrowser('chrome').build();
+  await driver.get('https://codeforces.com/enter?back=%2F');
+
+  const emailText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[1]/td[1]')).getText();
+  const passText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[2]/td[1]')).getText();
+
+  // Node assertion test by default
+  assert.strictEqual(emailText, 'Handle/Email');
+  assert.strictEqual(passText, 'Password');
+
+  await driver.quit();
+}
+
+
+/**
+ * Function calls
+ */
+// loginTest();
+assertionTest();
