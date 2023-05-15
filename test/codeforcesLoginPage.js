@@ -46,5 +46,12 @@ async function assertionTest() {
 /**
  * Function calls
  */
-loginTest();
-assertionTest();
+describe('Codeforces Login Page Testing...', function() {
+  it('Login test', async function() {
+    await loginTest();
+  });
+
+  it('Assertion test', async function() {
+    await assertionTest();
+  });
+});
