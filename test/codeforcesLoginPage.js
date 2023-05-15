@@ -1,6 +1,7 @@
 const { Builder, By, Key } = require('selenium-webdriver');
 require('chromedriver');
 const assert = require('assert');
+const should = require('chai').should();
 
 
 /**
@@ -30,9 +31,13 @@ async function assertionTest() {
   const emailText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[1]/td[1]')).getText();
   const passText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[2]/td[1]')).getText();
 
-  // Node assertion test by default
+  // Node assertion test
   assert.strictEqual(emailText, 'Handle/Email');
   assert.strictEqual(passText, 'Password');
+
+  // Chai assertion test
+  emailText.should.equal('Handle/Email');
+  passText.should.equal('Password');
 
   await driver.quit();
 }
@@ -41,5 +46,5 @@ async function assertionTest() {
 /**
  * Function calls
  */
-// loginTest();
+loginTest();
 assertionTest();

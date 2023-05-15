@@ -20,5 +20,8 @@
   "dependencies": {
     "chromedriver": "^113.0.0",
     "selenium-webdriver": "^4.9.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7"
   }
 }
