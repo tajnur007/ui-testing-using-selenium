@@ -1,0 +1,24 @@
+{
+  "name": "ui-testing-using-selenium",
+  "version": "1.0.0",
+  "description": "This is a simple repo for testing UI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tajnur007/ui-testing-using-selenium.git"
+  },
+  "keywords": [],
+  "author": "Kazi Tajnur Islam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tajnur007/ui-testing-using-selenium/issues"
+  },
+  "homepage": "https://github.com/tajnur007/ui-testing-using-selenium#readme",
+  "dependencies": {
+    "chromedriver": "^113.0.0",
+    "selenium-webdriver": "^4.9.2"
+  }
+}
