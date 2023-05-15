@@ -4,7 +4,7 @@
   "description": "This is a simple repo for testing UI.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --no-timeouts"
+    "test": "mocha --no-timeouts --parallel"
   },
   "repository": {
     "type": "git",
