@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-16T14:10:13.994Z",
+    "end": "2023-05-16T14:10:26.687Z",
+    "duration": 12693,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5fcd116b-5b3a-4b52-b8ea-f8c63ef42b6a",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d77e8346-a7d8-4789-b9db-a4d97009cccc",
+          "title": "Codeforces Login Page Testing...",
+          "fullFile": "/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test/assertionTest.js",
+          "file": "/test/assertionTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Assertion test",
+              "fullTitle": "Codeforces Login Page Testing... Assertion test",
+              "timedOut": null,
+              "duration": 7373,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await assertionTest();",
+              "err": {},
+              "uuid": "4ca4401e-10d2-417d-8cd3-4b9e8d410e2e",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4ca4401e-10d2-417d-8cd3-4b9e8d410e2e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7373,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "f1abd552-43e4-447d-8ddb-7b3f834b6b71",
+          "title": "Codeforces Login Page Testing...",
+          "fullFile": "/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test/loginTest.js",
+          "file": "/test/loginTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login test",
+              "fullTitle": "Codeforces Login Page Testing... Login test",
+              "timedOut": null,
+              "duration": 7680,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginTest();",
+              "err": {},
+              "uuid": "04c77410-d937-42a3-b999-b3805c396e1a",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04c77410-d937-42a3-b999-b3805c396e1a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7680,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "977f53ba-1026-4188-bccb-d721b3dd2f56",
+          "title": "Codeforces Login Page Testing...",
+          "fullFile": "/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test/codeforcesLoginPage.js",
+          "file": "/test/codeforcesLoginPage.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login test",
+              "fullTitle": "Codeforces Login Page Testing... Login test",
+              "timedOut": null,
+              "duration": 7719,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginTest();",
+              "err": {},
+              "uuid": "56e915e3-4666-4c47-82e9-b9ff2d681529",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Assertion test",
+              "fullTitle": "Codeforces Login Page Testing... Assertion test",
+              "timedOut": null,
+              "duration": 4554,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await assertionTest();",
+              "err": {},
+              "uuid": "81f341ad-03a5-4e19-ad49-0e4b81a82851",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "56e915e3-4666-4c47-82e9-b9ff2d681529",
+            "81f341ad-03a5-4e19-ad49-0e4b81a82851"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12273,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "testResults.html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test-report",
+        "reportFilename": "testResults.html"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

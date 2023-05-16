@@ -4,7 +4,7 @@
   "description": "This is a simple repo for testing UI.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register"
+    "test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options reportDir=/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test-report,reportFilename=testResults.html"
   },
   "repository": {
     "type": "git",
