@@ -4,7 +4,7 @@
   "description": "This is a simple repo for testing UI.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --no-timeouts --parallel"
+    "test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "selenium-webdriver": "^4.9.2"
   },
   "devDependencies": {
-    "chai": "^4.3.7"
+    "chai": "^4.3.7",
+    "mochawesome": "^7.1.3"
   }
 }
