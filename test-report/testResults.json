@@ -5,9 +5,9 @@
     "passes": 4,
     "pending": 0,
     "failures": 0,
-    "start": "2023-05-16T14:10:13.994Z",
-    "end": "2023-05-16T14:10:26.687Z",
-    "duration": 12693,
+    "start": "2023-06-08T08:37:50.173Z",
+    "end": "2023-06-08T08:37:59.674Z",
+    "duration": 9501,
     "testsRegistered": 4,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "5fcd116b-5b3a-4b52-b8ea-f8c63ef42b6a",
+      "uuid": "1bc211d5-fd1b-45f5-96fb-01a454a12f98",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d77e8346-a7d8-4789-b9db-a4d97009cccc",
+          "uuid": "c30c7585-c748-4a9c-8172-7ed5a1cff773",
           "title": "Codeforces Login Page Testing...",
           "fullFile": "/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test/assertionTest.js",
           "file": "/test/assertionTest.js",
@@ -38,7 +38,7 @@
               "title": "Assertion test",
               "fullTitle": "Codeforces Login Page Testing... Assertion test",
               "timedOut": null,
-              "duration": 7373,
+              "duration": 5224,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,7 +47,7 @@
               "context": null,
               "code": "await assertionTest();",
               "err": {},
-              "uuid": "4ca4401e-10d2-417d-8cd3-4b9e8d410e2e",
+              "uuid": "8aac5ae2-ef95-4c5e-9a29-afeaf86173d0",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,18 +55,18 @@
           ],
           "suites": [],
           "passes": [
-            "4ca4401e-10d2-417d-8cd3-4b9e8d410e2e"
+            "8aac5ae2-ef95-4c5e-9a29-afeaf86173d0"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7373,
+          "duration": 5224,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
         },
         {
-          "uuid": "f1abd552-43e4-447d-8ddb-7b3f834b6b71",
+          "uuid": "cf6fb90c-8155-488b-b871-3c7da75de65a",
           "title": "Codeforces Login Page Testing...",
           "fullFile": "/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test/loginTest.js",
           "file": "/test/loginTest.js",
@@ -77,7 +77,7 @@
               "title": "Login test",
               "fullTitle": "Codeforces Login Page Testing... Login test",
               "timedOut": null,
-              "duration": 7680,
+              "duration": 5501,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -86,7 +86,7 @@
               "context": null,
               "code": "await loginTest();",
               "err": {},
-              "uuid": "04c77410-d937-42a3-b999-b3805c396e1a",
+              "uuid": "d2e7e7ee-b7a9-41e9-9dd4-34e81d7f1d07",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -94,18 +94,18 @@
           ],
           "suites": [],
           "passes": [
-            "04c77410-d937-42a3-b999-b3805c396e1a"
+            "d2e7e7ee-b7a9-41e9-9dd4-34e81d7f1d07"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7680,
+          "duration": 5501,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
         },
         {
-          "uuid": "977f53ba-1026-4188-bccb-d721b3dd2f56",
+          "uuid": "503485b3-e271-49a8-8bce-444821d76c6e",
           "title": "Codeforces Login Page Testing...",
           "fullFile": "/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test/codeforcesLoginPage.js",
           "file": "/test/codeforcesLoginPage.js",
@@ -116,7 +116,7 @@
               "title": "Login test",
               "fullTitle": "Codeforces Login Page Testing... Login test",
               "timedOut": null,
-              "duration": 7719,
+              "duration": 5534,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -125,7 +125,7 @@
               "context": null,
               "code": "await loginTest();",
               "err": {},
-              "uuid": "56e915e3-4666-4c47-82e9-b9ff2d681529",
+              "uuid": "a6bd3b6e-a2bb-447d-a995-f4aad22ace41",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -134,7 +134,7 @@
               "title": "Assertion test",
               "fullTitle": "Codeforces Login Page Testing... Assertion test",
               "timedOut": null,
-              "duration": 4554,
+              "duration": 3418,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -143,7 +143,7 @@
               "context": null,
               "code": "await assertionTest();",
               "err": {},
-              "uuid": "81f341ad-03a5-4e19-ad49-0e4b81a82851",
+              "uuid": "251e4aa1-9188-42a3-a318-d061089592bc",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -151,13 +151,13 @@
           ],
           "suites": [],
           "passes": [
-            "56e915e3-4666-4c47-82e9-b9ff2d681529",
-            "81f341ad-03a5-4e19-ad49-0e4b81a82851"
+            "a6bd3b6e-a2bb-447d-a995-f4aad22ace41",
+            "251e4aa1-9188-42a3-a318-d061089592bc"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 12273,
+          "duration": 8952,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
