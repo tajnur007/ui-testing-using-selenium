@@ -55,5 +55,14 @@ Now, save the codes, open your editor's terminal and run `node test/codeforcesLo
 <div id="contributingGuide"></div>
 
 ## Contribution Guideline 
-I want to make contributing to this project as easy and transparent as possible. I will do my best to keep `main` branch in good shape. I actively welcome your pull requests: 
-**Documentation and Resources:**public bugs. Or you can send me an email to <a href="mailto:tajnur007@gmail.com">tajnur007@gmail.com</a> regarding an issue.
+
+I want to make contributing to this project as easy and transparent as possible. I will do my best to keep the `main` branch in good shape. I actively welcome your **pull requests**:
+
+  1. Fork this repo and create your branch from `main`.
+  2. If you've added code that should be tested, I will verify that.
+  3. If you've changed any code which requires to update documentation then update the documentation.
+  4. Make sure your code lints and is formatted.
+
+Please file issues liberally, I'm using GitHub issues to track public bugs. Please ensure your description is clear and has sufficient instructions to be able to reproduce the issue.
+
+I'm eager for your questions, input, and to hear about your experience. Also you can send me an email to <a href="mailto:tajnur007@gmail.com">tajnur007@gmail.com</a> regarding an issue.
