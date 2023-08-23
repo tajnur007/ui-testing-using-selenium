@@ -20,7 +20,7 @@ Now we will install `selenium-webdriver` and `chromedriver` into our project, ru
 ## First Test (Login testing)
 At first, we will create a folder `test` into project's root folder. We will put our test files into this `test` folder. We are going to test a simple login attempt with wrong credentials. Here I'm choosing the [**Codeforces**](https://codeforces.com/enter) login page to test. Let's see the code snippet below: 
 
-_codeforcesLoginPage.js_
+_test/codeforcesLoginPage.js_
 ```javascript
 const { Builder, By, Key } = require('selenium-webdriver');
 require('chromedriver');
@@ -51,11 +51,44 @@ There have two input fields for inserting Handle/Email and Password in the login
 
 Now, save the codes, open your editor's terminal and run `node test/codeforcesLoginPage.js` this command. If everything is fine then I hope you will see the behaviour I have described above. 
 
+## Assertion Testing Using Node (Equality checking)
+We will add this test into the previous file. We have to import the Node's default assert into this file first before using it. After that, we will add another function `assertionTest()` as follows: 
+
+_test/codeforcesLoginPage.js_
+```javascript
+const assert = require('assert');
+
+async function assertionTest() {
+  const driver = new Builder().forBrowser('chrome').build();
+  await driver.get('https://codeforces.com/enter?back=%2F');
+
+  const emailText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[1]/td[1]')).getText();
+  const passText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[2]/td[1]')).getText();
+
+  // Node assertion test
+  assert.strictEqual(emailText, 'Handle/Email');
+  assert.strictEqual(passText, 'Password');
+
+  // Chai assertion test
+  emailText.should.equal('Handle/Email');
+  passText.should.equal('Password');
+
+  await driver.quit();
+}
+
+assertionTest();
+````
+
+Here we are getting two element's text by their **xpath**. To copy the xpath of an element, you have to inspect that element, right click on that element and select **Copy XPath** from the **Copy** section.
+
+<img src="./assets/copy-xpath.png" width="300" alt="copy-xpath-image" />
+
+
+
 
 <div id="contributingGuide"></div>
 
-## Contribution Guideline 
-
+## Contribution Guideline
 I want to make contributing to this project as easy and transparent as possible. I will do my best to keep the `main` branch in good shape. I actively welcome your **pull requests**:
 
   1. Fork this repo and create your branch from `main`.
