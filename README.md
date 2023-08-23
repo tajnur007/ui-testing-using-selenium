@@ -65,13 +65,8 @@ async function assertionTest() {
   const emailText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[1]/td[1]')).getText();
   const passText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[2]/td[1]')).getText();
 
-  // Node assertion test
   assert.strictEqual(emailText, 'Handle/Email');
   assert.strictEqual(passText, 'Password');
-
-  // Chai assertion test
-  emailText.should.equal('Handle/Email');
-  passText.should.equal('Password');
 
   await driver.quit();
 }
@@ -79,11 +74,11 @@ async function assertionTest() {
 assertionTest();
 ````
 
-Here we are getting two element's text by their **xpath**. To copy the xpath of an element, you have to inspect that element, right click on that element and select **Copy XPath** from the **Copy** section.
+Here we are getting two element's text by their **XPath**. To copy the xpath of an element, you have to inspect that element, right click on that element and select **Copy XPath** from the **Copy** section.
 
 <img src="./assets/copy-xpath.png" width="300" alt="copy-xpath-image" />
 
-
+We are checking the email and password labels are strictly equal or not equal to `'Handle/Email'` and `'Password'` respectively. The methods are pretty user-friendly to understand what we are actually doing. Let's invoke this method and run the command `node test/codeforcesLoginPage.js` You can also check this test with wrong text matching thus you can verify that your code is working as expected or not.
 
 
 <div id="contributingGuide"></div>
