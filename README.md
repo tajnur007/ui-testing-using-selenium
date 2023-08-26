@@ -51,7 +51,7 @@ There have two input fields for inserting Handle/Email and Password in the login
 
 Now, save the codes, open your editor's terminal and run `node test/codeforcesLoginPage.js` this command. If everything is fine then I hope you will see the behaviour I have described above. 
 
-## Assertion Testing Using Node (Equality checking)
+## Assertion Testing Using _Node_ (Equality checking)
 We will add this test into the previous file. We have to import the Node's default assert into this file first before using it. After that, we will add another function `assertionTest()` as follows: 
 
 _test/codeforcesLoginPage.js_
@@ -76,14 +76,50 @@ assertionTest();
 
 Here we are getting two element's text by their **XPath**. To copy the xpath of an element, you have to inspect that element, right click on that element and select **Copy XPath** from the **Copy** section.
 
-<img src="./assets/copy-xpath.png" width="300" alt="copy-xpath-image" />
+<div style="display: flex; justify-content: center; margin-bottom: 10px">
+  <img src="./assets/copy-xpath.png" width="400" alt="copy-xpath-image" />
+</div>
 
 We are checking the email and password labels are strictly equal or not equal to `'Handle/Email'` and `'Password'` respectively. The methods are pretty user-friendly to understand what we are actually doing. Let's invoke this method and run the command `node test/codeforcesLoginPage.js` You can also check this test with wrong text matching thus you can verify that your code is working as expected or not.
 
 
-<div id="contributingGuide"></div>
+
+## Assertion Testing Using _Chai_ (Equality checking)
+At this phase, we are going to check the previous test but this time we will use [Chai](https://www.chaijs.com/) (Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework). You have to install this package first before starting this test, run `npm install chai`. 
+
+
+_test/codeforcesLoginPage.js_
+```javascript
+const should = require('chai').should();
+
+async function assertionTest() {
+  const driver = new Builder().forBrowser('chrome').build();
+  await driver.get('https://codeforces.com/enter?back=%2F');
+
+  const emailText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[1]/td[1]')).getText();
+  const passText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[2]/td[1]')).getText();
+
+  emailText.should.equal('Handle/Email');
+  passText.should.equal('Password');
+
+  await driver.quit();
+}
+
+assertionTest();
+```
+
+Here we did nothing special, just used Chai's **should()** method to check eqality. There have more features for assertion testing using Chai. Why I had choosen Chai over Node's built-in `assert`? I perfer Chai because it:
+  - provides a more expressive and human-readable syntax for writing assertions
+  - supports various assertion styles, including BDD (Behavior-Driven Development) and TDD (Test-Driven Development) styles, which can make your test code more descriptive and easier to understand.
+  - supports multiple assertion styles
+  - provides more descriptive error messages when assertions fail
+  - can be easily integrated with popular testing frameworks like Mocha, Jasmine, and Jest
+
 
 ## Contribution Guideline
+
+<div id="contributingGuide"></div>
+
 I want to make contributing to this project as easy and transparent as possible. I will do my best to keep the `main` branch in good shape. I actively welcome your **pull requests**:
 
   1. Fork this repo and create your branch from `main`.
