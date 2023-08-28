@@ -168,7 +168,92 @@ Mocha uses a **BDD** (Behavior-Driven Development) style syntax for writing test
   - `describe`: Used to group related test cases. It takes a string description and a callback function.
   - `it`: Defines an individual test case. It also takes a string description and a callback function containing the test logic.
 
-From now we will run our tests using `npm run test` command, it will execute the `mocha --no-timeouts` script and Mocha will look for test files in the current directory and its subdirectories.
+From now we will run our tests using `npm run test` command, it will execute the `mocha --no-timeouts` script and Mocha will look for test files in the current directory and its subdirectories. I believe, you will be informed about the testing and it's results.
+
+
+## Parallel Testing
+
+In a production level project, there may have lots of test cases and lots of testing files. Everytime Mocha will run every tests sequentially, thus it requires huge time to complete all of the test cases. Here parallel testing can save our time. Mocha providing us the parallel testing feature and we can do it by adding `--parallel` flag into our `test` script:
+
+_package.json_
+```json
+"scripts": {
+  "test": "mocha --no-timeouts --parallel"
+},
+```
+
+Here I have copied the `loginTest()` and `assertionTest()` into two different file named as `loginTest.js` and `assertionTest.js` respectively to check the parallel testing.
+
+_test/loginTest.js_
+```javascript
+const { Builder, By, Key } = require('selenium-webdriver');
+require('chromedriver');
+const assert = require('assert');
+const should = require('chai').should();
+
+
+/**
+ * Function definations
+ */
+async function loginTest() {
+  const driver = new Builder().forBrowser('chrome').build();
+  await driver.get('https://codeforces.com/enter?back=%2F');
+
+  // Enter email, wrong password and try to login
+  await driver.findElement(By.id('handleOrEmail')).sendKeys('tajnur007@gmail.com');
+  await driver.findElement(By.id('password')).sendKeys('123456', Key.RETURN);
+
+  await driver.quit();
+}
+
+
+/**
+ * Function calls
+ */
+describe('Codeforces Login Page Testing...', function() {
+  it('Login test', async function() {
+    await loginTest();
+  });
+});
+```
+
+_test/assertionTest.js_
+```javascript
+const { Builder, By, Key } = require('selenium-webdriver');
+require('chromedriver');
+const assert = require('assert');
+const should = require('chai').should();
+
+async function assertionTest() {
+  const driver = new Builder().forBrowser('chrome').build();
+  await driver.get('https://codeforces.com/enter?back=%2F');
+
+  const emailText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[1]/td[1]')).getText();
+  const passText = await driver.findElement(By.xpath('//*[@id="enterForm"]/table/tbody/tr[2]/td[1]')).getText();
+
+  // Node assertion test
+  assert.strictEqual(emailText, 'Handle/Email');
+  assert.strictEqual(passText, 'Password');
+
+  // Chai assertion test
+  emailText.should.equal('Handle/Email');
+  passText.should.equal('Password');
+
+  await driver.quit();
+}
+
+
+/**
+ * Function calls
+ */
+describe('Codeforces Login Page Testing...', function() {
+  it('Assertion test', async function() {
+    await assertionTest();
+  });
+});
+```
+
+Now we will run `npm run test` command. I hope, you can see the behavior of parallel testing.
 
 
 ## Contribution Guideline
