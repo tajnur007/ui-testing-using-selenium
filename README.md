@@ -1,7 +1,10 @@
 # ui-testing-using-selenium
+
 This repository serves as a dedicated space for practicing and improving UI testing skills using <strong>Selenium WebDriver</strong>. It provides a simple starting point for individuals who want to dive into UI testing and gain hands-on experience with Selenium WebDriver.
 
+
 ## Key Features and Purpose:
+
   - **Learning UI Testing:** The primary goal of this repository is to facilitate learning and skill development in UI testing. By leveraging Selenium WebDriver, you can gain practical knowledge of automating tests on web applications' user interfaces.
   - **Hands-on Practice:** This repository encourages hands-on practice by providing a pre-configured setup for UI testing with Selenium WebDriver. It offers a foundation for writing and executing UI test scripts, allowing you to practice test automation techniques specific to the user interface.
   - **Test Case Development:** This repository emphasizes the creation and execution of test cases that target different UI elements, interactions, and scenarios. It encourages you to explore various functionalities of Selenium WebDriver, such as locating elements, interacting with forms, validating UI behavior, and handling user inputs.
@@ -9,15 +12,21 @@ This repository serves as a dedicated space for practicing and improving UI test
   - **Collaboration and Community Engagement:** This repository is open for collaboration, allowing others to contribute, provide feedback, and share their own UI testing practices. It serves as a platform for knowledge exchange, fostering a community of UI testing enthusiasts and practitioners. Checkout <a href="#contributingGuide">Contributing Guide</a>
   - **Documentation and Resources:** The repository includes documentation and resources to support your learning journey. This includes guidance on setting up the development environment, usage instructions for running tests, and best practices for writing effective UI test scripts using Selenium WebDriver.
 
+
 ## Prerequisite
+
 To run our project, we need to install **Node.js**. I assume that you had already installed **node** in your machine. If you don't have then you can get it from [here](https://nodejs.org/en "Node.js").
 
+
 ## Project Setup
+
 Open your terminal/command prompt where you want to setup this project. Create a directory using command `mkdir ui-testing-using-selenium`, navigate to the directory using command `cd ui-testing-using-selenium`. Now initialize your project setup using command `npm init -y`, this command will create a `package.json` file with some default configuration, if you want to add manually then skip the `-y` flag.
 
 Now we will install `selenium-webdriver` and `chromedriver` into our project, run `npm install selenium-webdriver chromedriver`. I'm using Google Chrome browser for testing, if you want to use Firefox or Safari then install `geckodriver` or `safaridriver` respectively instead of `chromedriver`. Now we have finished our project setup.
 
+
 ## First Test (Login testing)
+
 At first, we will create a folder `test` into project's root folder. We will put our test files into this `test` folder. We are going to test a simple login attempt with wrong credentials. Here I'm choosing the [**Codeforces**](https://codeforces.com/enter) login page to test. Let's see the code snippet below: 
 
 _test/codeforcesLoginPage.js_
@@ -51,7 +60,9 @@ There have two input fields for inserting Handle/Email and Password in the login
 
 Now, save the codes, open your editor's terminal and run `node test/codeforcesLoginPage.js` this command. If everything is fine then I hope you will see the behaviour I have described above. 
 
+
 ## Assertion Testing Using _Node_ (Equality checking)
+
 We will add this test into the previous file. We have to import the Node's default assert into this file first before using it. After that, we will add another function `assertionTest()` as follows: 
 
 _test/codeforcesLoginPage.js_
@@ -83,8 +94,8 @@ Here we are getting two element's text by their **XPath**. To copy the xpath of 
 We are checking the email and password labels are strictly equal or not equal to `'Handle/Email'` and `'Password'` respectively. The methods are pretty user-friendly to understand what we are actually doing. Let's invoke this method and run the command `node test/codeforcesLoginPage.js` You can also check this test with wrong text matching thus you can verify that your code is working as expected or not.
 
 
-
 ## Assertion Testing Using _Chai_ (Equality checking)
+
 At this phase, we are going to check the previous test but this time we will use [Chai](https://www.chaijs.com/) (Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework). You have to install this package first before starting this test, run `npm install chai`. 
 
 
@@ -114,6 +125,50 @@ Here we did nothing special, just used Chai's **should()** method to check eqali
   - supports multiple assertion styles
   - provides more descriptive error messages when assertions fail
   - can be easily integrated with popular testing frameworks like Mocha, Jasmine, and Jest
+
+
+## Making Test More Describable
+
+Everytime when we are running a test file then we have to run `node [file_path_name]` e.g. `node test/codeforcesLoginPage.js`. Let assume that we have more files into our **test** folder. Everytime manually running an individual file to test is boring, right? And the test is not showing any specific result about our test. So now we are going to use [Mocha](https://mochajs.org/) in our project to make our test more describable. comment
+
+What is **Mocha**? Mocha is a popular JavaScript testing framework primarily used for testing Node.js applications and JavaScript code in general. It is known for its flexibility and extensibility, making it a popular choice among developers for writing unit tests, integration tests, and even end-to-end tests for web applications. In a project directory, if there have a folder named as `test`, or in any directory if there have any file named with `.spec.js` or `.test.js` extension then Mocha will run automatically all files those are into the `test` folder or named with `.spec.js` and `.test.js` in any folder.
+
+To install this package, we have to run `npm install mocha` command, you can also install this package into your project as a dev dependency with `--save-dev` flag, i.e. `npm install mocha --save-dev`. Now we will add/modify a script into our `package.json` file.
+
+_package.json_
+```json
+..................
+..................
+"scripts": {
+  "test": "mocha --no-timeouts"
+},
+..................
+..................
+```
+
+Now we will add following code into our `codeforcesLoginPage.js` file.
+
+```javascript
+/**
+ * Function calls
+ */
+describe('Codeforces Login Page Testing...', function() {
+  it('Login test', async function() {
+    await loginTest();
+  });
+
+  it('Assertion test', async function() {
+    await assertionTest();
+  });
+});
+```
+
+Mocha uses a **BDD** (Behavior-Driven Development) style syntax for writing tests. We typically uses the `describe` and `it` functions to structure our tests:
+
+  - `describe`: Used to group related test cases. It takes a string description and a callback function.
+  - `it`: Defines an individual test case. It also takes a string description and a callback function containing the test logic.
+
+From now we will run our tests using `npm run test` command, it will execute the `mocha --no-timeouts` script and Mocha will look for test files in the current directory and its subdirectories.
 
 
 ## Contribution Guideline
