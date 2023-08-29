@@ -291,6 +291,15 @@ If you want to generate this report into custom location as well as custom file 
 ```
 
 
+## Conclusion
+
+In this enlightening tutorial, we've embarked on a captivating journey, albeit just scratching the surface of the vast realm of UI testing. There exists an expansive landscape waiting to be explored, with countless opportunities to craft additional tests and scenarios that can fortify your UI testing prowess.
+
+While this tutorial may not claim the title of an absolute UI testing masterpiece, I firmly believe it serves as a stepping stone, guiding you onto this exciting path. Your journey into the world of UI testing has only just begun.
+
+I eagerly await your feedback and warmly welcome your contributions to enhance this tutorial and project. Please, feel unreservedly encouraged to share your invaluable experiences and show your appreciation by bestowing a **star** upon this repository if it resonated with you. Your support means the world to me, igniting the flames of enthusiasm in my open-source contribution journey. You can also share your experience with me by sending an email to <a href="mailto:tajnur007@gmail.com">tajnur007@gmail.com</a>.
+
+
 ## Contribution Guideline
 
 <div id="contributingGuide"></div>
@@ -303,5 +312,3 @@ I want to make contributing to this project as easy and transparent as possible.
   4. Make sure your code lints and is formatted.
 
 Please file issues liberally, I'm using GitHub issues to track public bugs. Please ensure your description is clear and has sufficient instructions to be able to reproduce the issue.
-
-I'm eager for your questions, input, and to hear about your experience. Also you can send me an email to <a href="mailto:tajnur007@gmail.com">tajnur007@gmail.com</a> regarding an issue.
