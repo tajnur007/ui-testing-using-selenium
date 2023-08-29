@@ -256,6 +256,41 @@ describe('Codeforces Login Page Testing...', function() {
 Now we will run `npm run test` command. I hope, you can see the behavior of parallel testing.
 
 
+## Adding Report Generator
+
+I would like to generate a report file rather than showing testing results in terminal. We can use **Mochawesome** package to generate a custom report as a result of our testing. Mochawesome is a popular JavaScript package primarily used for enhancing the reporting capabilities of Mocha. It provides several valuable features for improving the test reporting experience. I will not show the detail uses of this package, I will discuss about basic uses of this package but if you want to learn more then you can [checkout this](https://github.com/adamgruber/mochawesome#mochawesome).
+
+Now we will install `mochawesome` into our project as dev-dependency, run `npm install mochawesome --save-dev`. After successful installation we will modify our `test` script as following:
+
+```json
+"scripts": {
+  "test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register"
+}
+```
+
+Here we added `--reporter mochawesome --require mochawesome/register` this extra piece of code. Now run `npm run test` command and you can notice that there have created a new directory named as **mochawesome-report**. Into the directory, there have **mochawesome.html** file, this file contains our test results as web view, other files and directories are supportive files to the **mochawesome.html** file. Open this file (**mochawesome.html**) from your browser to see the testing results. You may see the result as the image below.
+
+<div>
+  <img src="./assets/mochawesome-report.png" alt="mochawesome-report" />
+</div>
+
+If you want to generate this report into custom location as well as custom file name then you can do it by adding extra flag `--reporter-options` with `reportDir` and `reportFilename`, e.g. `--reporter-options reportDir=/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test-report,reportFilename=testResults.html`. Thus our `test` script will be as follows:
+
+```json
+"scripts": {
+  "test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options reportDir=/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test-report,reportFilename=testResults.html"
+}
+```
+
+**Optional:** I would like to add one more command into the `test` script thus it can show me automatically the testing report after generating the report. For me, the command `google-chrome ./test-report/testResults.html` will show me the test result (I'm using **Linux OS**), so I also added this command into the `test` script.
+
+```json
+"scripts": {
+  "test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options reportDir=/home/tajnur/Desktop/TAJNUR/ui-testing-using-selenium/test-report,reportFilename=testResults.html; google-chrome ./test-report/testResults.html;"
+}
+```
+
+
 ## Contribution Guideline
 
 <div id="contributingGuide"></div>
