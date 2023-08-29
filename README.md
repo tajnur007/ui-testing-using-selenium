@@ -3,7 +3,21 @@
 This repository serves as a dedicated space for practicing and improving UI testing skills using <strong>Selenium WebDriver</strong>. It provides a simple starting point for individuals who want to dive into UI testing and gain hands-on experience with Selenium WebDriver.
 
 
-## Key Features and Purpose:
+## List of Contents
+
+  - [Key Features and Purposes](#key-features-and-purposes)
+  - [Prerequisite](#prerequisite)
+  - [Project Setup](#project-setup)
+  - [First Test](#first-test-login-testing)
+  - [Assertion Testing Using _Node_](#assertion-testing-using-node-equality-checking)
+  - [Assertion Testing Using _Chai_](#assertion-testing-using-chai-equality-checking)
+  - [Making Test More Describable](#making-test-more-describable)
+  - [Parallel Testing](#parallel-testing)
+  - [Adding Report Generator](#adding-report-generator)
+  - [Conclusion](#conclusion)
+  - [Contribution Guideline](#contribution-guideline)
+
+## Key Features and Purposes
 
   - **Learning UI Testing:** The primary goal of this repository is to facilitate learning and skill development in UI testing. By leveraging Selenium WebDriver, you can gain practical knowledge of automating tests on web applications' user interfaces.
   - **Hands-on Practice:** This repository encourages hands-on practice by providing a pre-configured setup for UI testing with Selenium WebDriver. It offers a foundation for writing and executing UI test scripts, allowing you to practice test automation techniques specific to the user interface.
@@ -301,8 +315,6 @@ I eagerly await your feedback and warmly welcome your contributions to enhance t
 
 
 ## Contribution Guideline
-
-<div id="contributingGuide"></div>
 
 I want to make contributing to this project as easy and transparent as possible. I will do my best to keep the `main` branch in good shape. I actively welcome your **pull requests**:
 
