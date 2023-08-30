@@ -1,6 +1,6 @@
 # ui-testing-using-selenium
 
-This repository serves as a dedicated space for practicing and improving UI testing skills using <strong>Selenium WebDriver</strong>. It provides a simple starting point for individuals who want to dive into UI testing and gain hands-on experience with Selenium WebDriver.
+This repository is a dedicated hub for honing and enhancing UI testing proficiency with **Selenium WebDriver**. It offers a straightforward entry point for those eager to delve into UI testing, providing practical, hands-on experience to sharpen their skills.
 
 
 ## List of Contents
