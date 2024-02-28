@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/tajnur007/ui-testing-using-selenium#readme",
   "dependencies": {
-    "chromedriver": "^116.0.0",
+    "chromedriver": "^122.0.3",
     "mocha": "^10.2.0",
     "selenium-webdriver": "^4.9.2"
   },
